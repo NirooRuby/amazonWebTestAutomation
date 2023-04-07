@@ -24,16 +24,10 @@ const Page = require('./page');
 
     
     async getProductAndGetName(index){
-        const string = '//div[@data-index="' + index + '"]//span[@class="a-size-medium a-color-base a-text-normal"]'
-        await $(string).waitForDisplayed({ timeout: 5000 });
-        return await $(string).getText();
+        const stringForproduct = '//div[@data-index="' + index + '"]//h2//span';
+       await $(stringForproduct).waitForDisplayed({ timeout: 5000 });
+        return await $(stringForproduct).getText();
         
-    }
-
-    async clickProductName(index){
-        const string = '//div[@data-index="' + index + '"]//span[@class="a-size-medium a-color-base a-text-normal"]'
-        return await $(string).click();
-
     }
 
     async clickOnProduct(index){
